@@ -1,3 +1,4 @@
 // TODO: html-loader is not installed (no image sync)
 
-import "./styles.css";
+import "./css/josh-comeau-reset.css";
+import "./css/styles.css";
