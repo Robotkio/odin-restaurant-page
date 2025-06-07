@@ -20,6 +20,7 @@ class MenuItem {
         const image = document.createElement("img"); 
         image.classList.add("menu-item-image");
         image.src = this.imageURL;
+        image.alt = "No image actually linked.";
         
         const desc = document.createElement("p");
         desc.classList.add("menu-item-desc");
@@ -43,7 +44,7 @@ let items = [];
 
 items[0] = new MenuItem ("Lasagna",
     "",
-    "An excellent lasagna.Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dicta odit ipsam esse eveniet repudiandae cumque quas suscipit libero molestias."
+    "An excellent lasagna. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dicta odit ipsam esse eveniet repudiandae cumque quas suscipit libero molestias."
 );
 items[1] = new MenuItem ("Carbonara",
     "",

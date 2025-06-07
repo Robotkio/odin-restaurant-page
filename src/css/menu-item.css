@@ -1,22 +1,31 @@
 :root {
     --menu-image-size: 120px;
+    --image-padding: 0.75rem;
+    --image-margin: 1rem;
+
+    --border-color: rgb(103, 173, 132);
 }
 
 .menu-item-title {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--image-margin);
     color: black;
 }
 
 .menu-item-image {
-    border: 1px solid black;
-    padding: 0.5rem;
-    margin: 0.5rem;
-    margin-top: 0;
+    border: 1px solid var(--border-color);
+    padding: var(--image-padding);
     width: var(--menu-image-size);
     height: var(--menu-image-size);
+}
+
+.page-content:nth-of-type(odd) .menu-item-image {
+    margin-left: var(--image-margin);
     float: right;
 }
 
 .page-content:nth-of-type(even) .menu-item-image {
+    margin-right: var(--image-margin);
     float: left;
 }
 
