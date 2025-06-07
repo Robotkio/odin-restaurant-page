@@ -1,0 +1,25 @@
+:root {
+    --menu-image-size: 120px;
+}
+
+.menu-item-title {
+    color: black;
+}
+
+.menu-item-image {
+    border: 1px solid black;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    margin-top: 0;
+    width: var(--menu-image-size);
+    height: var(--menu-image-size);
+    float: right;
+}
+
+.page-content:nth-of-type(even) .menu-item-image {
+    float: left;
+}
+
+.menu-item-desc {
+    color: black;
+}

@@ -1,3 +1,4 @@
+import "../css/menu-item.css";
 export { menu };
 
 const title = document.createElement("div");
@@ -5,19 +6,59 @@ title.id = "page-title";
 title.classList.add("menu-bg-color");
 title.innerText = "Menu";
 
+class MenuItem {
+    constructor(title, imageURL, description) {
+        this.title = title;
+        this.imageURL = imageURL;
+        this.description = description;
+    }
+    getHTMLItem() {
+        const head = document.createElement("h3");
+        head.classList.add("menu-item-title");
+        head.innerText = this.title;
+
+        const image = document.createElement("img"); 
+        image.classList.add("menu-item-image");
+        image.src = this.imageURL;
+        
+        const desc = document.createElement("p");
+        desc.classList.add("menu-item-desc");
+        desc.innerText = this.description;
+
+        const item = document.createElement("div");
+        item.classList.add("page-content");
+        item.appendChild(head);
+        item.appendChild(image);
+        item.appendChild(desc);
+
+        return item;
+    }
+}
+
+/*
+ *     Menu Items
+ */
+
+let items = [];
+
+items[0] = new MenuItem ("Lasagna",
+    "",
+    "An excellent lasagna.Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dicta odit ipsam esse eveniet repudiandae cumque quas suscipit libero molestias."
+);
+items[1] = new MenuItem ("Carbonara",
+    "",
+    "Top notch Carbonara. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dicta odit ipsam esse eveniet repudiandae cumque quas suscipit libero molestias."
+);
+items[2] = new MenuItem ("Linguine",
+    "",
+    "Soluta ipsam dolor sed accusamus sunt nemo? Voluptatem debitis veritatis, voluptate consequuntur repellat, sint, cupiditate sed praesentium doloribus deserunt dolores qui?"
+);
+
 const p1 = document.createElement("p");
-const p2 = document.createElement("p");
-const p3 = document.createElement("p");
-
-const paragraphs = [p1, p2, p3];
-paragraphs.forEach(e => e.classList.add("page-content"));
-
-const lorem01 = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dicta odit ipsam esse eveniet repudiandae cumque quas suscipit libero molestias. Commodi laudantium quasi a similique labore eveniet necessitatibus aliquid beatae!";
-const lorem02 = "Nisi vero quidem cumque libero sequi labore facere, neque minima magnam? Non officiis, id esse neque iusto numquam ducimus distinctio quas perspiciatis voluptas accusantium! Perspiciatis alias ipsam consequatur minus voluptate?";
-const lorem03 = "Soluta ipsam dolor sed accusamus sunt nemo? Voluptatem debitis veritatis, voluptate consequuntur repellat, sint, cupiditate sed praesentium doloribus deserunt dolores qui? Expedita numquam provident nesciunt eveniet, sunt quaerat ullam distinctio!";
-
+p1.classList.add("page-content");
+const lorem01 = "We have great meals. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dicta odit ipsam esse eveniet repudiandae cumque quas suscipit libero molestias. Commodi laudantium quasi a similique labore eveniet necessitatibus aliquid beatae!";
 p1.innerText = lorem01;
-p2.innerText = lorem02;
-p3.innerText = lorem03;
 
-const menu = [title, p1, p2, p3];
+const menu = [title, p1];
+items.forEach(item => menu.push(item.getHTMLItem()));
+console.log(menu);
